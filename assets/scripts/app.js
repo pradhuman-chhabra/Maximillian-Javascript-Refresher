@@ -115,40 +115,7 @@ and store the parameter values "name" and "age" in these properties.
 // console.log(hobbies);
 
 /*
-For this, findIndex actually takes a function as an input, and that's a great use case for using such a arrow function,
-
-since it's super short to write and not a lot of characters to type.
-
-This arrow function, which you pass to findIndex should accept at least one input parameter,
-
-which could be called item, because findIndex behind the scenes will execute this function,
-
-which you're passing to findIndex, and will automatically provide a value
-
-for this input parameter. Therefore, of course, your function also must accept it
-
-in order to then use it in this function body. Now, in this function body, in case of findIndex,
-
-you then should return true if you have the item that you were looking for, and false otherwise.
-
-For that, we can return item === 'Sports', For example, if we were looking for the index of the item Sports.
-
-So if we were looking for the index of this item. What this code here does is
-
-it executes this function automatically behind the scenes for every item in this array, including this Working item,
-
-which was pushed onto the array. And then for every item, it compares that item.
-
-So that text here to this text, with help of this comparison operator,which I mentioned before.
-
-If the two are equal, this function here returns true, and therefore findIndex knows
-
-that I found the item I was looking for,and it will then give me the index of that item.
-
-Otherwise, this will return false, and findIndex will do nothing.
-
-So, therefore, here I could store that index in a constant and then console.log it.
-
+For this, findIndex actually takes a function as an input, and that's a great use case for using such a arrow function, since it's super short to write and not a lot of characters to type. This arrow function, which you pass to findIndex should accept at least one input parameter, which could be called item, because findIndex behind the scenes will execute this function, which you're passing to findIndex, and will automatically provide a value for this input parameter. Therefore, of course, your function also must accept it in order to then use it in this function body. Now, in this function body, in case of findIndex, you then should return true if you have the item that you were looking for, and false otherwise. For that, we can return item === 'Sports', For example, if we were looking for the index of the item Sports. So if we were looking for the index of this item. What this code here does is it executes this function automatically behind the scenes for every item in this array, including this Working item, which was pushed onto the array. And then for every item, it compares that item. So that text here to this text, with help of this comparison operator,which I mentioned before. If the two are equal, this function here returns true, and therefore findIndex knows that I found the item I was looking for,and it will then give me the index of that item. Otherwise, this will return false, and findIndex will do nothing. So, therefore, here I could store that index in a constant and then console.log it.
 
 */
 
@@ -173,6 +140,12 @@ i.e sports its befined by us ,That's how this function here works.*/
   Since findIndex returns an index then we have to store the index in some variable so that's why we have const index
   what this function does ,it returns the index so it runs for every value of the array and it takes up a fucntion as an argument so its a function inside a function ithe inside function recieves the elements of the array as arguments and then the funcion body runs which returns true or false it it matches the value entered by the programmer , i.e us 
 */
+
+// const hobbies = ["Sports", "Cooking", "Reading"];
+// console.log(hobbies[0]);
+
+// hobbies.push("Working");
+// console.log(hobbies);
 
 // const index = hobbies.findIndex((item) =>
 // item === "Sports");
@@ -208,16 +181,83 @@ const editedHobbies = hobbies.map((item) => ({ text: item }));
 
 So that's what map does. */
 
+// const editedHobbies = hobbies.map((item) => item + "!");
+// console.log(editedHobbies);
+
+// Now, what's important to note about map is that you can really use it to transform any item to any other kind of item.
+
+/*
+Instead, I could also convert them to JavaScript objects. For that, I would create an object with opening and closing curly braces,
+
+But the curly braces which mean the object will have to be wrapped with parentheses since, otherwise, they would be treated as the parentheses that wrapped the function body. If, instead, wanna return a JavaScript object, I have to wrap the curly braces with parentheses. And this will tell JavaScript that these curly braces will not define the function body of this arrow function, but instead will define a new object returned by that arrow function. 
+
+const editedHobbies = hobbies.map((item) => return ({ text: item }));
+console.log(editedHobbies);
+
+And then here, I could define any key of my choice. And, for example, store the item, which in this case will be such a string as a value for that key. Really, you can create any kinds of values here, any objects of any shape, numbers, strings, booleans, whatever you want .
+
+*/
+// const hobbies = ["Sports", "Cooking", "Reading"];
+// console.log(hobbies[0]);
+
+// hobbies.push("Working");
+// console.log(hobbies);
+
 // const editedHobbies = hobbies.map((item) => ({ text: item }));
 // console.log(editedHobbies);
 
-// const [firstName, lastName] = ["Max", "Schwarzmüller"];
+/* 
 
+They both do the same thing they return an object we can use the return statement also
+
+function transformToObjects(numberArray) {
+  return numberArray.map((num)=> {return{val:num}})
+}
+
+function transformToObjects(numberArray) {
+  return numberArray.map((num)=>({val:num}))
+}
+
+Always remember function ko lena aur dena dono padhte hai , vealue deni hoti hai aur return value leni hoti hai, if you want to use the full functionality of the function
+
+*/
+
+// userNameData = ["Max", "Schwarzmüller"];
 // const firstName = userNameData[0];
 // const lastName = userNameData[1];
+// Conventional technique to access the items in an array
 
+// Deconstructing
+
+// const [firstName, lastName] = ["Max", "Schwarzmüller"];
 // console.log(firstName);
 // console.log(lastName);
+
+// const user = {
+//   name: "Max",
+//   age: 34
+// };
+
+// const name = user.name;
+// const age = user.age;
+
+// conventional approach to access the items of an object
+
+// Desctructuring objects
+
+/* 
+
+For array structuring, these names were up to you because the elements were pulled out by position.
+
+For the object, they are pulled out by name, so by property name. And therefore you have to use the same property names here.
+
+Though, you could assign an alias by using a colon here, and then defining your alias name on the right side of that colon.
+
+When creating an object, so when using the curly braces on the right side of the equal sign, the colon is used to separate the key of a value, the 
+
+property name, you could say, from the value that's stored under that property.
+
+*/
 
 // const { name: userName, age } = {
 //   name: "Max",
@@ -227,8 +267,21 @@ So that's what map does. */
 // console.log(userName);
 // console.log(age);
 
-// const name = user.name;
-// const age = user.age;
+/*
+
+The destructuring syntax explained in the previous lecture can also be used in function parameter lists.
+
+function storeOrder(order) {
+  localStorage.setItem('id', order.id);
+  localStorage.setItem('currency', order.currency);
+}
+
+function storeOrder({id, currency}) { // destructuring
+  localStorage.setItem('id', id);
+  localStorage.setItem('currency', currency);
+}
+
+*/
 
 // const hobbies = ["Sports", "Cooking"];
 // const user = {
